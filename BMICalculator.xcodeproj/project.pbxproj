@@ -11,14 +11,14 @@
 		86B8AEF8294C27D40007271E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AEF7294C27D40007271E /* ContentView.swift */; };
 		86B8AEFA294C27D50007271E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B8AEF9294C27D50007271E /* Assets.xcassets */; };
 		86B8AEFD294C27D50007271E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B8AEFC294C27D50007271E /* Preview Assets.xcassets */; };
-		86B8AEFF294C27D50007271E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AEFE294C27D50007271E /* Persistence.swift */; };
-		86B8AF02294C27D50007271E /* BMICalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF00294C27D50007271E /* BMICalculator.xcdatamodeld */; };
 		86B8AF0E294CACCD0007271E /* BMIResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF0D294CACCD0007271E /* BMIResultView.swift */; };
 		86B8AF10294CACF70007271E /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF0F294CACF70007271E /* MyProfileView.swift */; };
 		86B8AF15294CCB360007271E /* DataText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF14294CCB360007271E /* DataText.swift */; };
 		86B8AF17294CD9490007271E /* DataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF16294CD9490007271E /* DataRow.swift */; };
 		86B8AF19294D05BE0007271E /* AddRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF18294D05BE0007271E /* AddRecord.swift */; };
 		86B8AF1B294D05D40007271E /* UpdatePersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF1A294D05D40007271E /* UpdatePersonalInfo.swift */; };
+		86B8AF64294D6FC30007271E /* CoreDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF62294D6FC30007271E /* CoreDatabase.xcdatamodeld */; };
+		86B8AF66294D70220007271E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8AF65294D70220007271E /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,14 +27,14 @@
 		86B8AEF7294C27D40007271E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86B8AEF9294C27D50007271E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86B8AEFC294C27D50007271E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		86B8AEFE294C27D50007271E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		86B8AF01294C27D50007271E /* BMICalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BMICalculator.xcdatamodel; sourceTree = "<group>"; };
 		86B8AF0D294CACCD0007271E /* BMIResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultView.swift; sourceTree = "<group>"; };
 		86B8AF0F294CACF70007271E /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		86B8AF14294CCB360007271E /* DataText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataText.swift; sourceTree = "<group>"; };
 		86B8AF16294CD9490007271E /* DataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRow.swift; sourceTree = "<group>"; };
 		86B8AF18294D05BE0007271E /* AddRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecord.swift; sourceTree = "<group>"; };
 		86B8AF1A294D05D40007271E /* UpdatePersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePersonalInfo.swift; sourceTree = "<group>"; };
+		86B8AF63294D6FC30007271E /* CoreDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDatabase.xcdatamodel; sourceTree = "<group>"; };
+		86B8AF65294D70220007271E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +71,9 @@
 				86B8AF08294C34540007271E /* views */,
 				86B8AEF5294C27D40007271E /* BMICalculatorApp.swift */,
 				86B8AEF9294C27D50007271E /* Assets.xcassets */,
-				86B8AEFE294C27D50007271E /* Persistence.swift */,
-				86B8AF00294C27D50007271E /* BMICalculator.xcdatamodeld */,
 				86B8AEFB294C27D50007271E /* Preview Content */,
+				86B8AF62294D6FC30007271E /* CoreDatabase.xcdatamodeld */,
+				86B8AF65294D70220007271E /* DataController.swift */,
 			);
 			path = BMICalculator;
 			sourceTree = "<group>";
@@ -178,11 +178,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B8AF1B294D05D40007271E /* UpdatePersonalInfo.swift in Sources */,
-				86B8AF02294C27D50007271E /* BMICalculator.xcdatamodeld in Sources */,
-				86B8AEFF294C27D50007271E /* Persistence.swift in Sources */,
 				86B8AF19294D05BE0007271E /* AddRecord.swift in Sources */,
+				86B8AF64294D6FC30007271E /* CoreDatabase.xcdatamodeld in Sources */,
 				86B8AF17294CD9490007271E /* DataRow.swift in Sources */,
 				86B8AF15294CCB360007271E /* DataText.swift in Sources */,
+				86B8AF66294D70220007271E /* DataController.swift in Sources */,
 				86B8AEF8294C27D40007271E /* ContentView.swift in Sources */,
 				86B8AF0E294CACCD0007271E /* BMIResultView.swift in Sources */,
 				86B8AF10294CACF70007271E /* MyProfileView.swift in Sources */,
@@ -389,13 +389,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		86B8AF00294C27D50007271E /* BMICalculator.xcdatamodeld */ = {
+		86B8AF62294D6FC30007271E /* CoreDatabase.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				86B8AF01294C27D50007271E /* BMICalculator.xcdatamodel */,
+				86B8AF63294D6FC30007271E /* CoreDatabase.xcdatamodel */,
 			);
-			currentVersion = 86B8AF01294C27D50007271E /* BMICalculator.xcdatamodel */;
-			path = BMICalculator.xcdatamodeld;
+			currentVersion = 86B8AF63294D6FC30007271E /* CoreDatabase.xcdatamodel */;
+			path = CoreDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

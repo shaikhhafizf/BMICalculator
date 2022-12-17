@@ -40,7 +40,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
+//    @Environment(\.managedObjectContext) var context
+//    @FetchRequest(sortDescriptors: []) var records: FetchedResults<Record>
     @State private var selection = 0
     var body: some View {
         TabView(selection: $selection){

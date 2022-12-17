@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyProfileView: View {
+        @Environment(\.managedObjectContext) var context
+        @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
     var body: some View {
         NavigationView{
             VStack(alignment:.trailing){
@@ -50,7 +52,7 @@ struct MyProfileView: View {
                     .cornerRadius(8)
                 
                 Spacer()
-            }.padding([.leading,.trailing],20)
+            }.padding([.leading,.trailing],20).padding(.top, 48)
         }
         
     }

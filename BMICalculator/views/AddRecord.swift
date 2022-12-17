@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct AddRecord: View {
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(sortDescriptors: []) var records: FetchedResults<Record>
+
     @State var unit = "Metric"
     @State var weight = ""
     @State var height = ""
-    @State var date = ""
+    @State var date = Date()
     var body: some View {
         ScrollView{
             HStack(spacing:0){
@@ -47,7 +50,7 @@ struct AddRecord: View {
             if(unit == "Metric"){
                 
                 HStack{
-                    TextField("Height", text: $weight)
+                    TextField("Height", text: $height)
                         .foregroundColor(Color("DarkPurple"))
                     Text("cm").foregroundColor(Color("DarkPurple"))
                 }.padding(16).overlay(
@@ -58,7 +61,7 @@ struct AddRecord: View {
             else{
                 HStack{
                     HStack{
-                        TextField("Height(Ft)", text: $weight)
+                        TextField("Height(Ft)", text: $height)
                             .foregroundColor(Color("DarkPurple"))
                         Text("Ft").foregroundColor(Color("DarkPurple"))
                     }.padding(16).overlay(
@@ -66,7 +69,7 @@ struct AddRecord: View {
                             .stroke(Color("DarkPurple"), lineWidth: 1)
                     )
                     HStack{
-                        TextField("Height(inchs)", text: $weight)
+                        TextField("Height(inchs)", text: $height)
                             .foregroundColor(Color("DarkPurple"))
                         Text("Inchs").foregroundColor(Color("DarkPurple"))
                     }.padding(16).overlay(
@@ -75,9 +78,10 @@ struct AddRecord: View {
                     )
                 }
             }
+            DatePicker("Date", selection: $date,displayedComponents: [.date]).padding(.top,12)
+            
             HStack{
-//
-                Button(action:{print("add...")}){
+                Button(action:addItem){
                     Text("Done").font(.system(size: 16,weight: .regular, design: .rounded))
                 }.foregroundColor(Color.white)
                     .padding([.leading,.trailing],16)
@@ -87,6 +91,35 @@ struct AddRecord: View {
                     .cornerRadius(8)
             }.padding(.top,16)
         }.padding([.trailing,.leading],20).padding(.top,48).navigationTitle("Update record")
+    }
+    
+    
+
+    private func addItem() {
+        withAnimation {
+            let newRecord = Record(context: context)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/YY"
+            newRecord.date = dateFormatter.string(from: date)
+            newRecord.weight = Float(weight) ?? 0
+            newRecord.height = Float(height) ?? 0
+            newRecord.id = UUID()
+            
+//            BMIRecordInstance.date = Date()
+//            if(unit == "Metric" ){
+//                BMIRecordInstance.height = 123.8
+//                BMIRecordInstance.weight = 40.9
+//            }
+            newRecord.bmi = newRecord.weight/newRecord.height*newRecord.height
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 
