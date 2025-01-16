@@ -25,24 +25,7 @@ struct BMIResultView: View {
                             .foregroundColor(Color("GreenTea"))
                             .background(Color("BurnwickGreen"))
                             .cornerRadius(8)
-                    })
-                    NavigationLink(destination:BMIResultView()){
-                        
-                        Button(action: {
-                            let record = Record(context: context)
-                            record.id = UUID()
-                            record.weight = 32
-                            try?context.save()
-                            
-                        }){
-                            Text("Add new record").font(.system(size: 16,weight: .regular, design: .rounded)).padding([.leading,.trailing],16)
-                                .padding([.top,.bottom],8)
-                                .foregroundColor(Color("GreenTea"))
-                                .background(Color("BurnwickGreen"))
-                                .cornerRadius(8)
-                        }
-                    }.padding([.top,.bottom],48)
-                    }
+                    })}
                 HStack(spacing:0){
                     Spacer()
                     Button(action: {
